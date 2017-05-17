@@ -51,14 +51,14 @@ function watchSubmit() {
     getDataFromApi(query, null, displayOMDBSearchData);
   });
 
-  $('.js-search-form').on("click",".prevPage",function(e) {
+  $('.js-search-results').on("click",".prevPage",function(e) {
     e.preventDefault();
-    var query = $(this).find('.js-query').val();
+    var query = $('.js-query').val();
     getDataFromApi(query, prevPageToken, displayOMDBSearchData);
   });
-  $('.js-search-form').on("click",".nextPage",function(e) {
+  $('.js-search-results').on("click",".nextPage",function(e) {
     e.preventDefault();
-    var query = $(this).find('.js-query').val();
+    var query = $('.js-query').val();
     getDataFromApi(query, nextPageToken, displayOMDBSearchData);
   });
 }
