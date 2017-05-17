@@ -29,11 +29,11 @@ function displayOMDBSearchData(data) {
         '</div>';
     });
     if(data.prevPageToken){
-      resultElement += '<button class="prevPage">NextPage</button>';
+      resultElement += '<button class="prevPage">Prev Page</button>';
       prevPageToken = data.prevPageToken;
     }
     if(data.nextPageToken){
-      resultElement += '<button class="nextPage">NextPage</button>';
+      resultElement += '<button class="nextPage">Next Page</button>';
       nextPageToken = data.nextPageToken;
     }
   }
@@ -56,7 +56,7 @@ function watchSubmit() {
     var query = $(this).find('.js-query').val();
     getDataFromApi(query, prevPageToken, displayOMDBSearchData);
   });
-  $('.js-search-results').on("click",".nextPage",function(e) {
+  $('.js-search-form').on("click",".nextPage",function(e) {
     e.preventDefault();
     var query = $(this).find('.js-query').val();
     getDataFromApi(query, nextPageToken, displayOMDBSearchData);
